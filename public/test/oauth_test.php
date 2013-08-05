@@ -17,7 +17,7 @@ OAuthStore::instance('Session', $options);
 
 if (empty($_GET['oauth_token'])) {
     // get a request token
-    $tokenResultParams = OauthRequester::requestRequestToken($options['consumer_key'], $id);
+    $tokenResultParams = OAuthRequester::requestRequestToken($options['consumer_key'], $id);
 
     header('Location: ' . $options['authorize_uri'] .
         '?oauth_token=' . $tokenResultParams['token'] . 
